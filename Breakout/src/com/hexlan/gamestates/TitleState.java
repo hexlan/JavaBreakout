@@ -11,7 +11,7 @@ import com.hexlan.Game;
 public class TitleState extends GameState
 {
 	int counter = 0;
-	
+	int state = 0;
 	public TitleState(GSM gsm)
 	{
 		super(gsm);
@@ -38,11 +38,24 @@ public class TitleState extends GameState
 	}
 	public void update()
 	{
-		
+		if(counter<60){
+			counter++;
+		}else{
+			counter = 0;
+			if(state == 0 ){
+				state = 1;
+			}else{
+				state = 0;
+			}
+		}
 	}
 	public void render(Graphics2D g)
 	{
-		g.setColor(Color.black);
+		if(state==0){
+			g.setColor(Color.black);
+		}else{
+			g.setColor(Color.blue);
+		}
 		g.fillRect(0,0, Game.WIDTH, Game.HEIGHT);
 		
 		g.setFont(new Font("Monospace", Font.PLAIN, 26)); 
