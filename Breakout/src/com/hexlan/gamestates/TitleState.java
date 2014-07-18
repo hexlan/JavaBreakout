@@ -38,24 +38,26 @@ public class TitleState extends GameState
 	}
 	public void update()
 	{
-		if(counter<60){
+		if(counter<30)
+		{
 			counter++;
-		}else{
+		}
+		else
+		{
 			counter = 0;
-			if(state == 0 ){
+			state++;
+			if(state > 2 )
+			{
 				state = 1;
-			}else{
-				state = 0;
 			}
 		}
 	}
 	public void render(Graphics2D g)
 	{
-		if(state==0){
-			g.setColor(Color.black);
-		}else{
-			g.setColor(Color.blue);
-		}
+		if(state == 0){g.setColor(Color.black);};
+		if(state == 1){g.setColor(Color.blue);};
+		if(state == 2){g.setColor(Color.white);};
+		
 		g.fillRect(0,0, Game.WIDTH, Game.HEIGHT);
 		
 		g.setFont(new Font("Monospace", Font.PLAIN, 26)); 
