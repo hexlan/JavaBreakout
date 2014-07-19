@@ -48,7 +48,7 @@ public class TitleState extends GameState
 			state++;
 			if(state > 2 )
 			{
-				state = 1;
+				state = 0;
 			}
 		}
 	}
@@ -56,7 +56,7 @@ public class TitleState extends GameState
 	{
 		if(state == 0){g.setColor(Color.black);};
 		if(state == 1){g.setColor(Color.blue);};
-		if(state == 2){g.setColor(Color.white);};
+		if(state == 2){g.setColor(Color.red);};
 		
 		g.fillRect(0,0, Game.WIDTH, Game.HEIGHT);
 		
