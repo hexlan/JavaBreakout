@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import com.hexlan.handlers.GSM;
 import com.hexlan.handlers.Input;
 
+@SuppressWarnings("serial")
 public class Game extends JPanel implements Runnable, KeyListener, MouseListener, MouseMotionListener
 {
 	public static int level = 4;
